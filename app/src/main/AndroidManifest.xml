@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".my_project.activities.admin_general"></activity>
+        <activity android:name=".my_project.activities.pharmacy_entry"></activity>
+        <activity android:name=".my_project.activities.admin_general" />
         <activity android:name=".my_project.activities.admin_medicine_reg" />
         <activity android:name=".my_project.activities.MainActivity" />
         <activity android:name=".my_project.activities.SplashScreen">
@@ -21,7 +22,6 @@
         </activity>
         <activity android:name=".my_project.activities.userActivity" />
         <activity android:name=".my_project.activities.DeliverymanActivity" />
-         />
     </application>
 
 </manifest>
