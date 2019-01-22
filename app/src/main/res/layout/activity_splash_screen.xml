@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/logo1"
+    android:background="@drawable/splash1"
     android:gravity="bottom|center"
-    tools:context=".my_project.activities.SplashScreen">
+    tools:context=".SplashScreen">
 
     <ProgressBar
         android:id="@+id/progressbarId"
         android:progressBackgroundTint="#f9f9f9"
-        android:progressTint="#02b3b9"
+        android:progressTint="#008000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@android:style/Widget.ProgressBar.Horizontal"/>

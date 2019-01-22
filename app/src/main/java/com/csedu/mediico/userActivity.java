@@ -1,10 +1,10 @@
-package com.csedu.mediico.my_project.activities;
+package com.csedu.mediico;
 
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.csedu.mediico.R;
+
 
 
 public class userActivity extends Activity {

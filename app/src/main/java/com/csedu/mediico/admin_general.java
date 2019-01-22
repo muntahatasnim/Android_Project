@@ -1,11 +1,11 @@
-package com.csedu.mediico.my_project.activities;
+package com.csedu.mediico;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.csedu.mediico.R;
+
 
 
 public class admin_general extends Activity {
@@ -21,5 +21,6 @@ public class admin_general extends Activity {
                 startActivity(new Intent(admin_general.this,userActivity.class));
             }
         });
-    }
+
+           }
 }

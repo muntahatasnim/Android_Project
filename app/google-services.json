@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "926446080548",
+    "firebase_url": "https://mediico-c397b.firebaseio.com",
+    "project_id": "mediico-c397b",
+    "storage_bucket": "mediico-c397b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926446080548:android:366442b2a0969f7d",
+        "android_client_info": {
+          "package_name": "com.csedu.mediico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926446080548-ifvmajjeha9pdekm8om700jh6tqvfdms.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.csedu.mediico",
+            "certificate_hash": "c1648d3d2a71b2dad5afaf86488568511e5136c0"
+          }
+        },
+        {
+          "client_id": "926446080548-spus9l258k5sh0sbdae7j3b8bofcc9ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJVVSml7mnTSJW75vXOzi6it0UdGsYrNY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926446080548-spus9l258k5sh0sbdae7j3b8bofcc9ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

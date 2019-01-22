@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.csedu.mediico.R;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,8 +26,8 @@ public class FireBaseLink extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firebase_link);
-        FirebaseApp firebaseApp = FirebaseApp.initializeApp(this);
-        databaseMedicine=FirebaseDatabase.getInstance().getReference("Medicine");
+        FirebaseApp.initializeApp(this);
+        databaseMedicine = FirebaseDatabase.getInstance().getReference().child("Medicine");
         editTextBName = (EditText) findViewById(R.id.bname);
         editTextGName = (EditText) findViewById(R.id.gname);
         editTextAvailIn = (EditText) findViewById(R.id.availin);
