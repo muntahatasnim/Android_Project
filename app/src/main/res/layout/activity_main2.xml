@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="wrap_content"
-    android:background="@mipmap/new_back">
+    android:background="@mipmap/new_back" >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="70dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/small_logo"
+        android:background="#008B8B"/>
 
     <Button
         android:id="@+id/userbutton"
         android:layout_width="265dp"
         android:layout_height="62dp"
         android:layout_marginStart="63dp"
-        android:layout_marginTop="203dp"
+        android:layout_marginTop="250dp"
         android:background="#008B8B"
         android:textColor="#000000"
         android:textSize="30dp"
@@ -24,7 +34,7 @@
         android:layout_width="273dp"
         android:layout_height="61dp"
         android:layout_alignEnd="@+id/userbutton"
-        android:layout_marginTop="290dp"
+        android:layout_marginTop="350dp"
         android:layout_marginEnd="-11dp"
         android:background="#008B8B"
         android:text="Delivery Man"
@@ -32,4 +42,5 @@
         android:textSize="30dp"
         android:layout_alignRight="@+id/userbutton"
         android:layout_marginRight="-11dp" />
+
 </RelativeLayout>
