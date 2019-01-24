@@ -1,6 +1,5 @@
 package com.example.mediico;
 
-
 public class Medicine {
     String medId;
     String brandName;
@@ -8,22 +7,22 @@ public class Medicine {
     String availableIn;
     int stock;
 
-    public Medicine() {
+    public Medicine()
+    {
 
     }
 
-    public Medicine(String medId, String brandName, String genericName, String availableIn, int stock) {
-        this.medId = medId;
+    public Medicine(String medId,String brandName, String genericName, String availableIn,int stock) {
+        this.medId=medId;
         this.brandName = brandName;
         this.genericName = genericName;
         this.availableIn = availableIn;
-        this.stock = stock;
+        this.stock=stock;
     }
 
     public String getMedId() {
         return medId;
     }
-
 
     public String getBrandName() {
         return brandName;
@@ -41,3 +40,4 @@ public class Medicine {
         return stock;
     }
 }
+
