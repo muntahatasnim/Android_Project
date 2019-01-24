@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.csedu.mediico">
+    package="com.example.mediico">
 
     <application
         android:allowBackup="true"
@@ -9,20 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FireBaseLink"></activity>
-        <activity android:name=".pharmacy_entry" />
-        <activity android:name=".admin_general" />
-        <activity android:name=".admin_medicine_reg" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SplashScreen">
+        <activity android:name="com.example.mediico.pharmacy_entry" />
+        <activity android:name="com.example.mediico.admin_general" />
+        <activity android:name="com.example.mediico.admin_medicine_reg" />
+        <activity android:name="com.example.mediico.MainActivity" />
+        <activity android:name="com.example.mediico.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".userActivity" />
-        <activity android:name=".DeliverymanActivity" />
+        <activity android:name="com.example.mediico.userActivity" />
+        <activity android:name="com.example.mediico.DeliverymanActivity" />
     </application>
 
 </manifest>

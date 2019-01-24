@@ -1,4 +1,4 @@
-package com.csedu.mediico;
+package com.example.mediico;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

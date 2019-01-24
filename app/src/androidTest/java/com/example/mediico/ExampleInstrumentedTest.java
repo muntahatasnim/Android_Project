@@ -1,4 +1,4 @@
-package com.csedu.mediico;
+package com.example.mediico;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

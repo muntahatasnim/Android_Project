@@ -18,69 +18,72 @@
         android:src="@drawable/small_logo"
         android:background="#008B8B"/>
 
+
     <EditText
-        android:id="@+id/brand_name"
+        android:id="@+id/bName"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="200dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
         android:focusable="true"
         android:hint="Brand Name"
         android:textColorHint="#000000"
-        android:textSize="30dp" />
-
-
-    <EditText
-        android:id="@+id/generic"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_below="@+id/brand_name"
-        android:layout_alignEnd="@+id/brand_name"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/brand_name" />
-
-
-    <EditText
-
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:textColorHint="#000000"
-        android:layout_alignBottom="@+id/generic"
-        android:layout_alignParentStart="true"
-        android:ems="10"
-        android:hint="Phone no"
-        android:inputType="phone"
         android:textSize="30dp"
-        android:layout_alignParentLeft="true" />
-
-
+        android:autofillHints="bName"/>
     <EditText
-        android:id="@+id/available"
+        android:id="@+id/gName"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
-        android:layout_below="@+id/generic"
-        android:layout_alignEnd="@+id/generic"
+        android:layout_below="@+id/bName"
+        android:layout_alignEnd="@+id/bName"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/generic"
-        android:layout_alignParentLeft="true" />
-
-
-    <EditText
-
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:autofillHints="gName"
         android:textColorHint="#000000"
-        android:layout_alignBottom="@+id/available"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="0dp"
         android:ems="10"
+        android:hint="Generic Name"
+        android:textSize="30dp"
+        android:layout_alignRight="@+id/bName"
+        android:layout_alignParentLeft="true" />
+
+
+    <EditText
+        android:id="@+id/availIn"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_below="@+id/gName"
+        android:layout_alignEnd="@+id/gName"
+        android:layout_alignParentStart="true"
+        android:autofillHints="availIn"
+        android:textColorHint="#000000"
         android:hint="Available In"
         android:textSize="30dp"
+        android:layout_alignRight="@+id/gName"
         android:layout_alignParentLeft="true" />
+
+
+
+    <EditText
+        android:id="@+id/stock"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_below="@+id/availIn"
+        android:layout_alignEnd="@+id/availIn"
+        android:layout_alignParentStart="true"
+        android:autofillHints="stock"
+        android:textColorHint="#000000"
+        android:ems="10"
+        android:hint="Stock"
+        android:textSize="30dp"
+        android:layout_alignRight="@+id/availIn"
+        android:layout_alignParentLeft="true" />
+
 
     <Button
         android:id="@+id/add_medicine"
@@ -94,4 +97,5 @@
         android:textColor="#000000"
         android:textSize="30dp" />
 
-</RelativeLayout>
+
+    </RelativeLayout>
