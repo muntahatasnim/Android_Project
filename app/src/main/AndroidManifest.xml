@@ -9,19 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.mediico.pharmacy_entry" />
-        <activity android:name="com.example.mediico.admin_general" />
-        <activity android:name="com.example.mediico.admin_medicine_reg" />
-        <activity android:name="com.example.mediico.MainActivity" />
-        <activity android:name="com.example.mediico.SplashScreen">
+        <activity android:name=".showSingleMedicine"></activity>
+        <activity android:name=".medicine_show" />
+        <activity android:name=".pharmacy_entry" />
+        <activity android:name=".admin_general" />
+        <activity android:name=".admin_medicine_reg" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.mediico.userActivity" />
-        <activity android:name="com.example.mediico.DeliverymanActivity" />
+        <activity android:name=".userActivity" />
+        <activity android:name=".DeliverymanActivity" />
     </application>
 
 </manifest>

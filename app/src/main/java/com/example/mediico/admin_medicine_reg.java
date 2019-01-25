@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseError;
@@ -19,8 +20,10 @@ public class admin_medicine_reg extends Activity {
 
     EditText editTextBName, editTextGName, editTextAvailIn, editTextStock;
     Button buttonMed;
-    DatabaseReference databaseMedicine;
+   public DatabaseReference databaseMedicine;
     DatabaseReference dd;
+
+
 
 
     @Override
@@ -35,6 +38,9 @@ public class admin_medicine_reg extends Activity {
         editTextAvailIn = findViewById(R.id.availIn);
         editTextStock = findViewById(R.id.stock);
         buttonMed = findViewById(R.id.add_medicine);
+
+
+
         buttonMed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +52,9 @@ public class admin_medicine_reg extends Activity {
         });
 
     }
+
+
+
     public void AddPharmacy()
     {
         // databasePharmacy.addValueEventListener(new ValueEventListener() {
