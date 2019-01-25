@@ -25,7 +25,7 @@ public class admin_general extends Activity {
         Button admin_button = (Button) findViewById(R.id.admin);
         admin_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(admin_general.this,admin_medicine_reg.class));
+                startActivity(new Intent(admin_general.this,medicine_pharmacy_add.class));
             }
         });
 

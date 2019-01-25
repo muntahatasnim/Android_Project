@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:background="@mipmap/new_back" >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="70dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/small_logo"
+        android:background="#008B8B"/>
+
+    <Button
+        android:id="@+id/InputMedicine"
+        android:layout_width="265dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="250dp"
+        android:background="#008B8B"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:text="Register Medicine"
+        android:layout_marginLeft="63dp" />
+
+
+    <Button
+        android:id="@+id/InputPharmacy"
+        android:layout_width="273dp"
+        android:layout_height="61dp"
+        android:layout_alignEnd="@+id/InputMedicine"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="-11dp"
+        android:background="#008B8B"
+        android:text="Register Pharmacy"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:layout_alignRight="@+id/InputMedicine"
+        android:layout_marginRight="-11dp" />
+
+</RelativeLayout>

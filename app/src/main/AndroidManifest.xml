@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".showSingleMedicine"></activity>
+        <activity
+            android:name=".navigation_drawer"
+            android:label="@string/title_activity_navigation_drawer"
+            android:parentActivityName=".medicine_show">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mediico.medicine_show" />
+        </activity>
+        <activity android:name=".medicine_pharmacy_add" />
+        <activity android:name=".showSingleMedicine" />
         <activity android:name=".medicine_show" />
         <activity android:name=".pharmacy_entry" />
         <activity android:name=".admin_general" />

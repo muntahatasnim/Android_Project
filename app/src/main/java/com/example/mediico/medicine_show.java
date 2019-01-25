@@ -22,7 +22,6 @@ public class medicine_show extends Activity {
     private ArrayList<String>medicineKey = new ArrayList<>();
 
 
-    String batch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
