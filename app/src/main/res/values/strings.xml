@@ -4,6 +4,14 @@
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
+    <string name="Home">Home</string>
+    <string name="History">History</string>
+    <string name="About">details</string>
+    <string name="Cart">Cart</string>
+    <string name="Settings">Settings</string>
+    <string name="nav_open">open</string>
+    <string name="nav_close">close</string>
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

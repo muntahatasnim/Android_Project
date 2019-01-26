@@ -1,13 +1,34 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+   tools:showIn="navigation_view">
     tools:context="com.example.mediico.navigation_drawer">
+    <group android:checkableBehavior="single">
     <item
-        android:id="@+id/action_example"
-        android:showAsAction="withText|ifRoom"
-        android:title="@string/action_example" />
+        android:id="@+id/home_menu"
+        android:title="Home"
+        android:icon="@drawable/ic_home_black_24dp" />
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings" />
+        android:id="@+id/history_menu"
+        android:title="History"
+        android:icon="@drawable/ic_history_black_24dp" />
+    />
+
+    <item
+        android:id="@+id/cart_menu"
+        android:title="Cart"
+        android:icon="@drawable/ic_shopping_cart_black_24dp" />
+    />
+
+    <item
+        android:id="@+id/details_menu"
+        android:title="About"
+        android:icon="@drawable/ic_details_black_24dp" />
+    />
+
+    <item
+        android:id="@+id/settings_menu"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings_black_24dp" />
+    />
+    </group>
 </menu>
