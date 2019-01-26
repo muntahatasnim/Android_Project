@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
+        <!--<TextView
             android:id="@+id/MedicineList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
             android:textSize="24sp"
             android:text="Medicine List"
             android:textStyle="bold"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#FFFFFF"/>-->
 
 
     </LinearLayout>
@@ -54,8 +54,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+            android:background="#008B8B"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
 
     </RelativeLayout>

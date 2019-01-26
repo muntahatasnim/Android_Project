@@ -1,4 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
    tools:showIn="navigation_view">
     tools:context="com.example.mediico.navigation_drawer">
@@ -31,4 +32,11 @@
         android:icon="@drawable/ic_settings_black_24dp" />
     />
     </group>
+
+    <item android:id="@+id/search"
+        android:title="Search Medicine"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="collapseActionView|ifRoom"
+        app:actionViewClass="android.widget.SearchView" />
+
 </menu>

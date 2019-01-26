@@ -8,17 +8,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".SearchResultsActivity"></activity>
         <activity android:name=".medicine_pharmacy_add" />
         <activity android:name=".showSingleMedicine" />
-        <activity android:name=".medicine_show" />
+        <activity android:name=".medicine_show">
+            <meta-data
+                android:name="android.app.search"
+                android:resource="@layout/search" />
+        </activity>
         <activity android:name=".pharmacy_entry" />
         <activity android:name=".admin_general" />
         <activity android:name=".admin_medicine_reg" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
