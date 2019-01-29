@@ -18,29 +18,27 @@
 
     <Button
         android:id="@+id/InputMedicine"
-        android:layout_width="wrap_content"
-        android:layout_height="88dp"
+        android:layout_width="320dp"
+        android:layout_height="61dp"
         android:layout_marginStart="63dp"
         android:layout_marginLeft="63dp"
         android:layout_marginTop="250dp"
         android:background="#008B8B"
         android:text="Register Medicine"
-        android:textColor="#000000"
-        android:textSize="30dp" />
+        android:textColor="#000000" />
 
 
     <Button
         android:id="@+id/InputPharmacy"
-        android:layout_width="296dp"
-        android:layout_height="88dp"
+        android:layout_width="320dp"
+        android:layout_height="62dp"
         android:layout_alignEnd="@+id/InputMedicine"
         android:layout_alignRight="@+id/InputMedicine"
         android:layout_marginTop="350dp"
-        android:layout_marginEnd="-6dp"
-        android:layout_marginRight="-6dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
         android:background="#008B8B"
         android:text="Register Pharmacy"
-        android:textColor="#000000"
-        android:textSize="30dp" />
+        android:textColor="#000000" />
 
 </RelativeLayout>

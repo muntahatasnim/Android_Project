@@ -40,11 +40,11 @@ public class medicine_show extends AppCompatActivity {
         setContentView(R.layout.activity_medicine_show);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ActionBar actionbar = getSupportActionBar();
-        actionbar.setDisplayHomeAsUpEnabled(true);
+       // ActionBar actionbar = getSupportActionBar();
+      //  actionbar.setDisplayHomeAsUpEnabled(true);
        // getActionBar().setTitle("All Medicine");
         getSupportActionBar().setTitle("All Medicines");
-        actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
+       // actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
