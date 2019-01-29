@@ -28,7 +28,7 @@
         android:layout_marginTop="200dp"
         android:focusable="true"
         android:hint="Pharmacy Name"
-        android:textColorHint="#708090"
+        android:textColorHint="#D8CECE"
          />
 
 
@@ -44,7 +44,7 @@
         android:ems="10"
         android:hint="Phone no"
         android:inputType="phone"
-        android:textColorHint="#708090" />
+        android:textColorHint="#D8CECE" />
 
 
     <EditText
@@ -58,7 +58,7 @@
         android:layout_alignParentLeft="true"
         android:ems="10"
         android:hint="Address"
-        android:textColorHint="#708090"/>
+        android:textColorHint="#D8CECE"/>
 
     <Button
         android:id="@+id/add_pharmacy"
@@ -67,9 +67,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="100dp"
-        android:background="#008B8B"
+        android:background="#001A66"
         android:text="Add Pharmacy"
-        android:textColor="#000000"
+        android:textColor="#ffff"
          />
 
 </RelativeLayout>

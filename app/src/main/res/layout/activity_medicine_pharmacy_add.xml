@@ -4,7 +4,7 @@
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:background="@mipmap/new_back" >
 
     <ImageView
@@ -23,9 +23,9 @@
         android:layout_marginStart="63dp"
         android:layout_marginLeft="63dp"
         android:layout_marginTop="250dp"
-        android:background="#008B8B"
+        android:background="#001A66"
         android:text="Register Medicine"
-        android:textColor="#000000" />
+        android:textColor="#ffff" />
 
 
     <Button
@@ -37,8 +37,8 @@
         android:layout_marginTop="350dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
-        android:background="#008B8B"
+        android:background="#001A66"
         android:text="Register Pharmacy"
-        android:textColor="#000000" />
+        android:textColor="#ffff" />
 
 </RelativeLayout>

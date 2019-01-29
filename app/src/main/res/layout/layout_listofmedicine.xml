@@ -4,7 +4,7 @@
     android:layout_height="60dp"
     android:layout_marginTop="0dp"
     android:padding="15dp"
-    android:background="@mipmap/new_back"
+    android:background="@drawable/new_back"
     android:id="@+id/medicine_element_layout"
     android:orientation="vertical">
 
