@@ -1,8 +1,10 @@
 package com.example.mediico;
 import android.app.SearchManager;
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -34,17 +36,17 @@ public class medicine_show extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine_show);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-       // ActionBar actionbar = getSupportActionBar();
-      //  actionbar.setDisplayHomeAsUpEnabled(true);
-       // getActionBar().setTitle("All Medicine");
+        //ActionBar actionbar = getSupportActionBar();
+       //actionbar.setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("All Medicines");
-       // actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
+       getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
 
 
         mDrawerLayout = findViewById(R.id.drawer_layout);

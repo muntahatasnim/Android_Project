@@ -3,7 +3,10 @@ package com.example.mediico;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.google.firebase.database.DatabaseReference;
+
 public class showSingleMedicine extends Activity {
+    private DatabaseReference showSinglemedicineDatabaseRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

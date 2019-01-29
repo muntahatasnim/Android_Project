@@ -19,16 +19,16 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/studentName"
+            android:id="@+id/medicineName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Medicine Nmae :"
+            android:text="Medicine Name :"
             android:textColor="#fff"
             android:textSize="22dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/studentName_value"
+           android:id="@+id/medicine_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -45,7 +45,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/studentBatch"
+            android:id="@+id/pharmacyAvailable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pharmacy Available :"
@@ -54,7 +54,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/studentBatch_value"
+            android:id="@+id/pharmacy_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -71,7 +71,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/studentRoll"
+            android:id="@+id/quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quantity :"
@@ -80,12 +80,12 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/studentRoll_value"
+            android:id="@+id/quantity_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="1dp"
-            android:text="abc"
+            android:text="123"
             android:textColor="#fff"
             android:textSize="19dp"
             android:layout_marginLeft="30dp" />
@@ -98,7 +98,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/studentPhone"
+            android:id="@+id/phone_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Phone Number :"
@@ -107,11 +107,11 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/studentPhone_value"
+            android:id="@+id/phone_pharmacy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:text="def"
+            android:text="01234567800"
             android:textColor="#fff"
             android:textSize="19dp"
             android:layout_marginLeft="30dp" />
