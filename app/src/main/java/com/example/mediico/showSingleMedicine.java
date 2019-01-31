@@ -1,21 +1,21 @@
 package com.example.mediico;
 
-import android.app.Activity;
-import android.os.Bundle;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class showSingleMedicine extends Activity {
-    private DatabaseReference showSinglemedicineDatabaseRef;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_single_medicine);
-    }
-}
-
-/*public class showSingleStudent extends Activity {
 
     private DatabaseReference showSingleStudentDatabaseRef;
 
@@ -29,50 +29,51 @@ public class showSingleMedicine extends Activity {
     Button editStudentButton;
     Button deleteStudentButton;
 
-    private FirebaseAuth loginAuthentication;
+    // private FirebaseAuth loginAuthentication;
     private DatabaseReference userDatabase;
     String key;
     String batch;
     String nowUser;
-    Student student;
+    Medicine student;
 
-    User user;
+    // User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_single_student);
-        editStudentButton = findViewById(R.id.Edit_student_button);
-        editStudentButton.setVisibility(GONE);
-        deleteStudentButton = findViewById(R.id.Delete_student_button);
-        deleteStudentButton.setVisibility(GONE);
-        studentName = findViewById(R.id.studentName_value);
-        studentBatch = findViewById(R.id.studentBatch_value);
-        studentRoll = findViewById(R.id.studentRoll_value);
-        studentPhone = findViewById(R.id.studentPhone_value);
-        studentEmail =findViewById(R.id.studentEmail_value);
-        studentRegistrationNo = findViewById(R.id.studentRegistration_value);
+        setContentView(R.layout.activity_show_single_medicine);
+        // editStudentButton = findViewById(R.id.Edit_student_button);
+        // editStudentButton.setVisibility(GONE);
+        // deleteStudentButton = findViewById(R.id.Delete_student_button);
+        //deleteStudentButton.setVisibility(GONE);
+        studentName =(TextView) findViewById(R.id.medicine_value);
+        studentBatch = (TextView) findViewById(R.id.quantity_value);
+        //studentRoll = findViewById(R.id.studentRoll_value);
+        // studentPhone = findViewById(R.id.studentPhone_value);
+        // studentEmail =findViewById(R.id.studentEmail_value);
+        // studentRegistrationNo = findViewById(R.id.studentRegistration_value);
 
-        loginAuthentication = FirebaseAuth.getInstance();
-        final FirebaseUser currentUser = loginAuthentication.getCurrentUser();
-        nowUser=currentUser.getEmail();
-        userDatabase=FirebaseDatabase.getInstance().getReference("users/"+nowUser.replace('.','&'));
+        // loginAuthentication = FirebaseAuth.getInstance();
+        // final FirebaseUser currentUser = loginAuthentication.getCurrentUser();
+        //nowUser=currentUser.getEmail();
+        // userDatabase= FirebaseDatabase.getInstance().getReference("users/"+nowUser.replace('.','&'));
 
         key = getIntent().getStringExtra("showKey");
-        batch =getIntent().getStringExtra("batch");
-        showSingleStudentDatabaseRef = FirebaseDatabase.getInstance().getReference("student/"+ batch + "/" + key);
+        //batch =getIntent().getStringExtra("batch");
+        showSingleStudentDatabaseRef = FirebaseDatabase.getInstance().getReference("Medicine/"+ key);
 
 
         showSingleStudentDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                student = dataSnapshot.getValue(Student.class);
-                studentName.setText(student.getName());
-                studentBatch.setText(student.getBatch());
-                studentRoll.setText(student.getRoll());
-                studentPhone.setText(student.getPhone());
-                studentEmail.setText(student.getEmail());
-                studentRegistrationNo.setText(student.getRegistrationNo());
+                student = dataSnapshot.getValue(Medicine.class);
+
+                studentName.setText(student.getBrandName());
+                studentBatch.setText(String.valueOf(student.getStock()));
+                // studentRoll.setText(student.getRoll());
+                //studentPhone.setText(student.getPhone());
+                // studentEmail.setText(student.getEmail());
+                // studentRegistrationNo.setText(student.getRegistrationNo());
 
                 showSingleStudentDatabaseRef.removeEventListener(this);
             }
@@ -82,33 +83,33 @@ public class showSingleMedicine extends Activity {
             }
         });
 
-        userDatabase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                user=dataSnapshot.getValue(User.class);
-                if(user.getIsModerator().equals("true")){
-                    System.out.println("habijabi");
-                    editStudentButton.setVisibility(View.VISIBLE);
-                    deleteStudentButton.setVisibility(View.VISIBLE);
-                }
-            }
+        // userDatabase.addValueEventListener(new ValueEventListener() {
+        //  @Override
+        // public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        // user=dataSnapshot.getValue(User.class);
+        // if(user.getIsModerator().equals("true")){
+        //  System.out.println("habijabi");
+        // editStudentButton.setVisibility(View.VISIBLE);
+        //deleteStudentButton.setVisibility(View.VISIBLE);
+    }
+}
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+// @Override
+// public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+//}
+//  });
 
-        editStudentButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                takeToEditStudent(v);
-            }
+//editStudentButton.setOnClickListener(new View.OnClickListener() {
+// @Override
+// public void onClick(View v) {
+// takeToEditStudent(v);
+//  }
 
-        });
+//  });
 
-        deleteStudentButton.setOnClickListener(new View.OnClickListener() {
-            @Override
+// deleteStudentButton.setOnClickListener(new View.OnClickListener() {
+           /* @Override
             public void onClick(View v) {
                 showSingleStudentDatabaseRef.removeValue();
                 finish();
@@ -122,6 +123,6 @@ public class showSingleMedicine extends Activity {
         intent.putExtra("showKey",key);
         intent.putExtra("batch",batch);
         startActivity(intent);
-    }
-}*/
+    }*/
+
 
