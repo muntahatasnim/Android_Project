@@ -4,6 +4,8 @@ package com.example.mediico;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -47,6 +49,23 @@ public class showSingleMedicine extends Activity {
 
             }
         });
+
+     final Button cartButton = (Button) findViewById(R.id.cart);
+    final Button plusButton=findViewById(R.id.plus);
+     plusButton.setVisibility(View.GONE);
+        final Button minusButton=findViewById(R.id.minus);
+        minusButton.setVisibility(View.GONE);
+        cartButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                cartButton.setVisibility(View.GONE);
+                minusButton.setVisibility(View.VISIBLE);
+                plusButton.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+
+
 
     }
 }
