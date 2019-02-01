@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".verify_admin">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/new_back"
+        tools:context=".MainActivity">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="70dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/small_logo"
+            android:background="#008B8B"/>
+
+
+        <EditText
+            android:id="@+id/editTextAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="200dp"
+            android:focusable="true"
+            android:hint="User Name"
+            android:textColorHint="#708090"
+            />
+
+
+        ♦<EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_below="@+id/editTextAdmin"
+        android:layout_alignEnd="@+id/editTextAdmin"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/editTextAdmin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="-3dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textVisiblePassword"
+        android:textColorHint="#708090"
+        />
+
+
+
+        <Button
+            android:id="@+id/buttonLogIn"
+            android:layout_width="160dp"
+            android:layout_height="61dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="405dp"
+            android:background="#008B8B"
+            android:text="Login"
+            android:textColor="#000000" />
+
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

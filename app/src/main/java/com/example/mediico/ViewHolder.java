@@ -44,8 +44,8 @@ class medicineListRecyclerViewAdapter extends RecyclerView.Adapter<medicineListR
         viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,showSingleMedicine.class);
-                intent.putExtra("showKey",medicineKey.get(i));
+                Intent intent = new Intent(context, SearchResultsActivity.class);
+                intent.putExtra("showKey",medicineName.get(i));
                 context.startActivity(intent);
             }
         });

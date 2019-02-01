@@ -18,7 +18,7 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 
 public class admin_medicine_reg extends Activity {
-    EditText editTextBName, editTextGName, editTextAvailIn, editTextStock;
+    EditText editTextBName, editTextGName, editTextAvailIn, editTextStock,editTextPrice;
     Button buttonMed;
     //DatabaseReference mediicoRoot;
     //DatabaseReference databasePharmacy;
@@ -41,6 +41,7 @@ public class admin_medicine_reg extends Activity {
         editTextGName = (EditText) findViewById(R.id.gName);
         editTextAvailIn = (EditText) findViewById(R.id.availIn);
         editTextStock = (EditText) findViewById(R.id.stock);
+        editTextPrice = (EditText) findViewById(R.id.price);
         buttonMed = (Button) findViewById(R.id.add_medicine);
         buttonMed.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +67,7 @@ public class admin_medicine_reg extends Activity {
 
     private void AddMedicine() {
         int stock;
+        int price = 0;
         String brandName = editTextBName.getText().toString();
 
         String genericName = editTextGName.getText().toString();
@@ -78,10 +80,14 @@ public class admin_medicine_reg extends Activity {
         else{
             stock = 0;
         }
+        if (isInteger(editTextPrice.getText().toString())) {
+            price = Integer.parseInt(editTextPrice.getText().toString());
+        }
+
         System.out.println(stock);
         if (!TextUtils.isEmpty(brandName) &&!TextUtils.isEmpty(genericName) &&!TextUtils.isEmpty(pharmacyName) && stock!=0) {
             String id = databaseMedicine.push().getKey();
-            com.example.mediico.Medicine medicine = new com.example.mediico.Medicine(id, brandName, genericName, pharmacyName, stock);
+            com.example.mediico.Medicine medicine = new com.example.mediico.Medicine(id, brandName, genericName, pharmacyName, stock,price);
             assert id != null;
             databaseMedicine.child(id).setValue(medicine,new
                     DatabaseReference.CompletionListener() {

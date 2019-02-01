@@ -6,8 +6,6 @@ import android.view.View;
 import android.widget.Button;
 
 
-
-
 public class admin_general extends Activity {
 
     @Override
@@ -18,14 +16,14 @@ public class admin_general extends Activity {
         Button general_button = (Button) findViewById(R.id.general_user);
         general_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(admin_general.this,userActivity.class));
+                startActivity(new Intent(admin_general.this, userActivity.class));
             }
         });
 
         Button admin_button = (Button) findViewById(R.id.admin);
         admin_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(admin_general.this,medicine_pharmacy_add.class));
+                startActivity(new Intent(admin_general.this, verify_admin.class));
             }
         });
 

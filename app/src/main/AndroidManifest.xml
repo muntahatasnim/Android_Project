@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".addtoCart"></activity>
+        <activity android:name=".verify_admin"></activity>
+        <activity android:name=".SearchResultActivitySpecific"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".SearchResultsActivity" />
         <activity android:name=".medicine_pharmacy_add" />
         <activity android:name=".showSingleMedicine" />

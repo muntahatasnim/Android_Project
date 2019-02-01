@@ -16,14 +16,14 @@ public class medicine_pharmacy_add extends Activity {
         Button addMed = (Button) findViewById(R.id.InputMedicine);
         addMed.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(medicine_pharmacy_add.this,admin_medicine_reg.class));
+                startActivity(new Intent(medicine_pharmacy_add.this, admin_medicine_reg.class));
             }
         });
 
         Button addpharma = (Button) findViewById(R.id.InputPharmacy);
         addpharma.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(medicine_pharmacy_add.this,pharmacy_entry.class));
+                startActivity(new Intent(medicine_pharmacy_add.this, pharmacy_entry.class));
             }
         });
 

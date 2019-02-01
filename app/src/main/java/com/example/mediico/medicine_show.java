@@ -1,14 +1,12 @@
 package com.example.mediico;
 import android.app.SearchManager;
 import android.content.Context;
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,11 +16,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -36,17 +36,18 @@ public class medicine_show extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
 
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine_show);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbarSearch);
         setSupportActionBar(toolbar);
-        //ActionBar actionbar = getSupportActionBar();
-       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       // ActionBar actionbar = getSupportActionBar();
+      //  actionbar.setDisplayHomeAsUpEnabled(true);
+       // getActionBar().setTitle("All Medicine");
         getSupportActionBar().setTitle("All Medicines");
-       getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
+       // actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
@@ -142,9 +143,48 @@ public class medicine_show extends AppCompatActivity {
                 (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView =
                 (SearchView) menu.findItem(R.id.search).getActionView();
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getComponentName()));
+        if (null != searchView) {
+            searchView.setSearchableInfo(searchManager
+                    .getSearchableInfo(getComponentName()));
+            searchView.setIconifiedByDefault(false);
+        }
 
-        return true;
+        SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
+
+
+            public boolean onQueryTextSubmit(final String queryName) {
+                Query query=FirebaseDatabase.getInstance().getReference().child("Medicine").orderByChild("brandName").equalTo(queryName);
+                query.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(!dataSnapshot.exists())
+                        {
+                            Toast.makeText(getApplicationContext(), "Medicine not available ", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            String message=queryName;
+                            Intent intent = new Intent(getApplicationContext(), SearchResultActivitySpecific.class);
+                            intent.putExtra("message_key",message);
+                            startActivity(intent);
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+               return true;
+            }
+            public boolean onQueryTextChange(String newText) {
+                // this is your adapter that will be filtered
+                return true;
+            }
+        };
+        searchView.setOnQueryTextListener(queryTextListener);
+        return super.onCreateOptionsMenu(menu);
+
     }
 }

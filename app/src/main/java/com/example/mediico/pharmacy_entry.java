@@ -66,10 +66,10 @@ public class pharmacy_entry extends Activity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
 
-                if (!dataSnapshot.exists()) {
+                if (!dataSnapshot.exists() && pharmacyName!=null && phoneNumber!=null && address!=null) {
                     dataPharmacy.child(pID).child("User Name").setValue(pharmacyName);
                     dataPharmacy.child(pID).child("Phone Number").setValue(phoneNumber);
-                    dataPharmacy.child(pID).child("Address").setValue(0);
+                    dataPharmacy.child(pID).child("Address").setValue(address);
                     Toast.makeText(getApplicationContext(), "Registration Successful", Toast.LENGTH_SHORT).show();
 
                 }
