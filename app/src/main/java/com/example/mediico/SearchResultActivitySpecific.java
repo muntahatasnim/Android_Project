@@ -51,6 +51,7 @@ public class SearchResultActivitySpecific extends AppCompatActivity {
             }
         });
 
+
     }
     private void initRecyclerView(){
         RecyclerView recyclerView = findViewById(R.id.recyclerv_viewSpecificMed);

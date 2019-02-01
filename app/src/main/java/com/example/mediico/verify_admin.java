@@ -1,5 +1,6 @@
 package com.example.mediico;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class verify_admin extends AppCompatActivity {
+public class verify_admin extends Activity {
     EditText editTextAdmin, editTextPassword;
     Button logIn;
     @Override

@@ -140,25 +140,59 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="horizontal"/>
+        android:layout_width="wrap_content"
+        android:layout_height="59dp"
+        android:layout_marginBottom="100dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="horizontal"/>
-
+        <Button
+            android:id="@+id/cart"
+            android:layout_width="320dp"
+            android:layout_height="59dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="45dp"
+            android:layout_marginBottom="150dp"
+            android:background="#001A66"
+            android:text="Add to Cart"
+            android:textColor="#ffff" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_gravity="center"
-        android:orientation="horizontal"/>
+        android:layout_height="59dp"
+        android:layout_marginBottom="100dp"
+        >
 
+        <Button
+            android:id="@+id/plus"
+            android:layout_width="70dp"
+            android:layout_height="59dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="#001A66"
+            android:text="+1"
+            android:textSize="20dp"
+            android:textColor="#ffff" />
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            />
+        <Button
+            android:id="@+id/minus"
+            android:layout_width="70dp"
+            android:layout_height="59dp"
+            android:layout_marginRight="220dp"
+            android:text="-1"
+            android:textSize="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#001A66"
+            android:textColor="#ffff" />
+    </LinearLayout>
 
 
 </LinearLayout>

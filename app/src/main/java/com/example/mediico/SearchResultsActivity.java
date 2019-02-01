@@ -46,20 +46,18 @@ public class SearchResultsActivity extends Activity {
 
                     medName.setText(medicine.getBrandName());
                     pharmName.setText(medicine.getAvailableIn());
-                    quantity.setText(String.valueOf(medicine.getStock()));
-                    Cost.setText(String.valueOf(medicine.getPrice()));
+                    quantity.setText(String.valueOf(String.valueOf(medicine.getStock())));
+                    Cost.setText(String.valueOf(String.valueOf(medicine.getPrice())));
                     Query queryPharma = FirebaseDatabase.getInstance().getReference().child("Pharmacy").orderByChild("User Name").equalTo(medicine.getAvailableIn());
                     queryPharma.addListenerForSingleValueEvent(new ValueEventListener() {
 
 
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-
                          if(dataSnapshot.exists())
                          {
                              Pharmacy pharmacy = dataSnapshot.getValue(Pharmacy.class);
-                             phoneNo.setText(pharmacy.getPhoneNo());
+                             phoneNo.setText(String.valueOf(pharmacy.getPhoneNo()));
                          }
 
 

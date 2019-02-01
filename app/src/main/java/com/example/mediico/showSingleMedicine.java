@@ -41,7 +41,7 @@ public class showSingleMedicine extends Activity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 medicine = dataSnapshot.getValue(Medicine.class);
-                medName.setText(medicine.getBrandName());
+                medName.setText(String.valueOf(medicine.getBrandName()));
                 medStock.setText(String.valueOf(medicine.getStock()));
                 showSingleMedicineDatabaseRef.removeEventListener(this);
             }
