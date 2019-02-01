@@ -142,7 +142,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="59dp"
-        android:layout_marginBottom="100dp">
+        android:layout_marginBottom="20dp">
 
         <Button
             android:id="@+id/cart"
@@ -160,7 +160,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="59dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="40dp"
         >
 
         <Button
@@ -193,6 +193,66 @@
             android:background="#001A66"
             android:textColor="#ffff" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+        <Button
+            android:id="@+id/checkout"
+            android:layout_width="320dp"
+            android:layout_height="59dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="45dp"
+            android:background="#001A66"
+            android:text="Checkout and view cart"
+            android:textColor="#ffff" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        >
 
+        <TextView
+            android:id="@+id/CartBrandNameValue"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="19dp" />
+        <TextView
+            android:id="@+id/cart_quantity"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="50dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="19dp" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="70dp">
+        <TextView
+            android:id="@+id/cart_price"
+            android:layout_width="150dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="50dp"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="19dp" />
+
+    </LinearLayout>
 </LinearLayout>

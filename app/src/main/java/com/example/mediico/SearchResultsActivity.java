@@ -2,10 +2,14 @@ package com.example.mediico;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,8 +22,14 @@ import static android.support.constraint.Constraints.TAG;
 
 public class SearchResultsActivity extends Activity {
 
+Medicine medicine;
+int price;
 
-    TextView medName, pharmName, quantity, phoneNo, Cost;
+    TextView medName, pharmName, quantity, phoneNo, Cost,cartMedName,cartQuantity,cartPrice;
+    int cnt = 0;
+    TextView showCnt;
+
+    int totalPrice;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,6 +40,10 @@ public class SearchResultsActivity extends Activity {
         pharmName = findViewById(R.id.pharmacyNameValue);
         quantity = findViewById(R.id.quantityValue);
         Cost = findViewById(R.id.priceValue);
+        final Button checkoutButton=findViewById(R.id.checkout);
+        cartMedName=findViewById(R.id.CartBrandNameValue);
+        cartQuantity=findViewById(R.id.cart_quantity);
+        cartPrice=findViewById(R.id.cart_price);
         String queryName = getIntent().getStringExtra("showKey");
         System.out.println(queryName);
         Query query = FirebaseDatabase.getInstance().getReference().child("Medicine").orderByChild("brandName").equalTo(queryName);
@@ -42,25 +56,23 @@ public class SearchResultsActivity extends Activity {
 
 
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-                    Medicine medicine = childSnapshot.getValue(Medicine.class);
-
+                    medicine = childSnapshot.getValue(Medicine.class);
                     medName.setText(medicine.getBrandName());
+                    cartMedName.setText(medicine.getBrandName());
                     pharmName.setText(medicine.getAvailableIn());
                     quantity.setText(String.valueOf(String.valueOf(medicine.getStock())));
-                    Cost.setText(String.valueOf(String.valueOf(medicine.getPrice())));
+                    Cost.setText(String.valueOf(medicine.getPrice()));
+                    price=medicine.getPrice();
                     Query queryPharma = FirebaseDatabase.getInstance().getReference().child("Pharmacy").orderByChild("User Name").equalTo(medicine.getAvailableIn());
                     queryPharma.addListenerForSingleValueEvent(new ValueEventListener() {
 
 
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                         if(dataSnapshot.exists())
-                         {
-                             Pharmacy pharmacy = dataSnapshot.getValue(Pharmacy.class);
-                             phoneNo.setText(String.valueOf(pharmacy.getPhoneNo()));
-                         }
-
-
+                            if (dataSnapshot.exists()) {
+                                Pharmacy pharmacy = dataSnapshot.getValue(Pharmacy.class);
+                                phoneNo.setText(String.valueOf(pharmacy.getPhoneNo()));
+                            }
                         }
 
                         @Override
@@ -84,9 +96,69 @@ public class SearchResultsActivity extends Activity {
                 Log.d(TAG, databaseError.getMessage());
             }
         });
+        showCnt = findViewById(R.id.count);
+
+        final Button cartButton = (Button) findViewById(R.id.cart);
+        final Button plusButton = findViewById(R.id.plus);
+        plusButton.setVisibility(View.GONE);
+        checkoutButton.setVisibility(View.GONE);
+        final Button minusButton = findViewById(R.id.minus);
+        minusButton.setVisibility(View.GONE);
+        cartButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                cartButton.setVisibility(View.GONE);
+                minusButton.setVisibility(View.VISIBLE);
+                checkoutButton.setVisibility(View.VISIBLE);
+                plusButton.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+        plusButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                cnt++;
+                totalPrice = price * cnt;
+                cartQuantity.setText(String.valueOf(cnt));
+                showCnt.setText(String.valueOf(cnt));
+
+
+            }
+        });
+        minusButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                cnt--;
+                totalPrice = price * cnt;
+                cartQuantity.setText(String.valueOf(cnt));
+                if (cnt < 0) {
+                    Toast.makeText(getApplicationContext(), "Cart Item can't be less then zero(0).", Toast.LENGTH_SHORT).show();
+                    cnt = 0;
+                    showCnt.setText(String.valueOf(cnt));
+                }
+                showCnt.setText(String.valueOf(cnt));
+            }
+        });
+
+        cartPrice.setVisibility(View.GONE);
+        cartMedName.setVisibility(View.GONE);
+        cartQuantity.setVisibility(View.GONE);
+        checkoutButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                checkoutButton.setVisibility(View.GONE);
+                cartPrice.setVisibility(View.VISIBLE);
+                plusButton.setVisibility(View.GONE);
+                minusButton.setVisibility(View.GONE);
+                showCnt.setVisibility(View.GONE);
+                cartMedName.setVisibility(View.VISIBLE);
+                cartQuantity.setVisibility(View.VISIBLE);
+                cartPrice.setText(String.valueOf(totalPrice));
+            }
+            });
 
 
     }
 
 
+
     }
+
+
