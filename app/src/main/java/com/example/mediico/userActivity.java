@@ -30,7 +30,7 @@ public class userActivity extends Activity {
     DatabaseReference databaseUser;
     DatabaseReference dataOfUser;
     DatabaseReference dataVerify;
-    String userName, phoneNumber, userId,logInUserName,logInPhoneNumber;
+    String userName, phoneNumber, userId, logInUserName, logInPhoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,10 +68,10 @@ public class userActivity extends Activity {
 
     private void RegisterUser() {
         userId = FirebaseDatabase.getInstance().getReference().child("User").push().getKey();
-        userName = editTextUserName.getText().toString();
-        phoneNumber = editTextPhoneNumber.getText().toString();
+        logInUserName = editTextUserName.getText().toString();
+        logInPhoneNumber = editTextPhoneNumber.getText().toString();
         dataVerify = FirebaseDatabase.getInstance().getReference().child("User");
-        Query query = FirebaseDatabase.getInstance().getReference().child("User").orderByChild("User Name").equalTo(userName);
+        Query query = FirebaseDatabase.getInstance().getReference().child("User").orderByChild("User Name").equalTo(logInUserName);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
 
 
@@ -79,7 +79,7 @@ public class userActivity extends Activity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
 
-                if (!dataSnapshot.exists() && userName != null && phoneNumber != null) {
+                if (!dataSnapshot.exists() || (logInUserName == null || logInPhoneNumber == null)) {
                     dataOfUser.child(userId).child("User Name").setValue(userName);
                     dataOfUser.child(userId).child("Phone Number").setValue(phoneNumber);
                     dataOfUser.child(userId).child("Purchase History").setValue(0);
@@ -103,23 +103,20 @@ public class userActivity extends Activity {
 
     }
 
-    private void logInUser()
-    {
-         logInUserName = editTextUserName.getText().toString();
-        logInPhoneNumber=editTextPhoneNumber.getText().toString();
-        dataVerify=FirebaseDatabase.getInstance().getReference().child("User");
-        Query query=FirebaseDatabase.getInstance().getReference().child("User").orderByChild("User Name").equalTo(userName);
+    private void logInUser() {
+        logInUserName = editTextUserName.getText().toString();
+        logInPhoneNumber = editTextPhoneNumber.getText().toString();
+        dataVerify = FirebaseDatabase.getInstance().getReference().child("User");
+        Query query = FirebaseDatabase.getInstance().getReference().child("User").orderByChild("User Name").equalTo(userName);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (!dataSnapshot.exists() && logInUserName!=null && logInPhoneNumber!=null){
-                    Toast.makeText(getApplicationContext() , "Please register or use valid username and phonenumber", Toast.LENGTH_LONG).show();
+                if (!dataSnapshot.exists() && logInUserName != null && logInPhoneNumber != null) {
+                    Toast.makeText(getApplicationContext(), "Please register or use valid username and phonenumber", Toast.LENGTH_LONG).show();
 
-                }
-                else
-                {
-                    //activity inserted hobe.
-                    startActivity(new Intent(userActivity.this,medicine_show .class));
+                } else {
+
+                    startActivity(new Intent(userActivity.this, medicine_show.class));
                 }
             }
 

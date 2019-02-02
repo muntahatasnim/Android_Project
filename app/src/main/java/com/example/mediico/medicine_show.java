@@ -1,4 +1,5 @@
 package com.example.mediico;
+
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -32,7 +33,7 @@ import java.util.Collections;
 public class medicine_show extends AppCompatActivity {
     private DatabaseReference medicinePageDataBaseRef;
     private ArrayList<String> medicineName = new ArrayList<>();
-    private ArrayList<String>medicineKey = new ArrayList<>();
+    private ArrayList<String> medicineKey = new ArrayList<>();
     private DrawerLayout mDrawerLayout;
 
 
@@ -43,11 +44,11 @@ public class medicine_show extends AppCompatActivity {
         setContentView(R.layout.activity_medicine_show);
         Toolbar toolbar = findViewById(R.id.toolbarSearch);
         setSupportActionBar(toolbar);
-       // ActionBar actionbar = getSupportActionBar();
-      //  actionbar.setDisplayHomeAsUpEnabled(true);
-       // getActionBar().setTitle("All Medicine");
+        // ActionBar actionbar = getSupportActionBar();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // getActionBar().setTitle("All Medicine");
         getSupportActionBar().setTitle("All Medicines");
-       // actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
 
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
@@ -101,8 +102,8 @@ public class medicine_show extends AppCompatActivity {
                 medicineName.clear();
                 medicineKey.clear();
 
-                int i=0;
-                for(DataSnapshot ds: dataSnapshot.getChildren()){
+                int i = 0;
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Medicine medicine = ds.getValue(Medicine.class);
                     medicineName.add(medicine.getBrandName());
                     medicineKey.add(ds.getKey());
@@ -131,7 +132,7 @@ public class medicine_show extends AppCompatActivity {
 
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerv_view5);
-        medicineListRecyclerViewAdapter adapter = new medicineListRecyclerViewAdapter(this,medicineName,medicineKey);
+        medicineListRecyclerViewAdapter adapter = new medicineListRecyclerViewAdapter(this, medicineName, medicineKey);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -153,19 +154,16 @@ public class medicine_show extends AppCompatActivity {
 
 
             public boolean onQueryTextSubmit(final String queryName) {
-                Query query=FirebaseDatabase.getInstance().getReference().child("Medicine").orderByChild("brandName").equalTo(queryName);
+                Query query = FirebaseDatabase.getInstance().getReference().child("Medicine").orderByChild("brandName").equalTo(queryName);
                 query.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(!dataSnapshot.exists())
-                        {
+                        if (!dataSnapshot.exists()) {
                             Toast.makeText(getApplicationContext(), "Medicine not available ", Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                        {
-                            String message=queryName;
+                        } else {
+                            String message = queryName;
                             Intent intent = new Intent(getApplicationContext(), SearchResultActivitySpecific.class);
-                            intent.putExtra("message_key",message);
+                            intent.putExtra("message_key", message);
                             startActivity(intent);
                         }
 
@@ -176,8 +174,9 @@ public class medicine_show extends AppCompatActivity {
 
                     }
                 });
-               return true;
+                return true;
             }
+
             public boolean onQueryTextChange(String newText) {
                 // this is your adapter that will be filtered
                 return true;

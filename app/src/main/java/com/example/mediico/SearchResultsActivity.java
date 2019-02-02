@@ -24,8 +24,8 @@ import static android.support.constraint.Constraints.TAG;
 
 public class SearchResultsActivity extends Activity {
 
-Medicine medicine;
-int price;
+    Medicine medicine;
+    int price;
 
     TextView medName, pharmName, quantity, phoneNo, Cost,cartMedName,cartQuantity,cartPrice;
     int cnt = 0;
@@ -99,7 +99,7 @@ int price;
             }
         });
         showCnt = findViewById(R.id.count);
-      final TextView mycart=findViewById(R.id.your_Cart);
+        final TextView mycart=findViewById(R.id.your_Cart);
         mycart.setVisibility(View.GONE);
         final Button cartButton = (Button) findViewById(R.id.cart);
         final Button plusButton = findViewById(R.id.plus);
@@ -165,13 +165,11 @@ int price;
                 cartQuantity.setVisibility(View.VISIBLE);
                 cartPrice.setText(String.valueOf(totalPrice));
             }
-            });
+        });
 
 
     }
 
 
 
-    }
-
-
+}
