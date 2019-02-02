@@ -18,6 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import static android.support.constraint.Constraints.TAG;
 
 public class SearchResultsActivity extends Activity {
@@ -97,7 +99,8 @@ int price;
             }
         });
         showCnt = findViewById(R.id.count);
-
+      final TextView mycart=findViewById(R.id.your_Cart);
+        mycart.setVisibility(View.GONE);
         final Button cartButton = (Button) findViewById(R.id.cart);
         final Button plusButton = findViewById(R.id.plus);
         plusButton.setVisibility(View.GONE);
@@ -141,14 +144,24 @@ int price;
         cartPrice.setVisibility(View.GONE);
         cartMedName.setVisibility(View.GONE);
         cartQuantity.setVisibility(View.GONE);
+        final TextView printProduct=findViewById(R.id.printBrandName);
+        printProduct.setVisibility(View.GONE);
+        final TextView printAmount=findViewById(R.id.printQuantity);
+        printAmount.setVisibility(View.GONE);
+        final TextView print_price=findViewById(R.id.printPrice);
+        print_price.setVisibility(View.GONE);
         checkoutButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 checkoutButton.setVisibility(View.GONE);
+                mycart.setVisibility(View.VISIBLE);
                 cartPrice.setVisibility(View.VISIBLE);
                 plusButton.setVisibility(View.GONE);
                 minusButton.setVisibility(View.GONE);
                 showCnt.setVisibility(View.GONE);
                 cartMedName.setVisibility(View.VISIBLE);
+                print_price.setVisibility(View.VISIBLE);
+                printAmount.setVisibility(View.VISIBLE);
+                printProduct.setVisibility(View.VISIBLE);
                 cartQuantity.setVisibility(View.VISIBLE);
                 cartPrice.setText(String.valueOf(totalPrice));
             }
