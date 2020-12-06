@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mediico">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.mediico"
+    android:versionCode="TODO"
+    android:versionName="TODO">
 
     <application
         android:allowBackup="true"
@@ -9,11 +12,14 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".addtoCart"></activity>
-        <activity android:name=".verify_admin"></activity>
-        <activity android:name=".SearchResultActivitySpecific"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        android:theme="@style/AppTheme"
+        tools:targetApi="donut">
+        <activity android:name=".Main3Activity"></activity>
+        <activity android:name=".addtoCart" />
+        <activity android:name=".verify_admin" />
+        <activity
+            android:name=".SearchResultActivitySpecific"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".SearchResultsActivity" />
         <activity android:name=".medicine_pharmacy_add" />
         <activity android:name=".showSingleMedicine" />

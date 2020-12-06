@@ -135,6 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:textColor="#fff"
+            android:inputType="number"
             android:textSize="19dp"
             android:layout_marginLeft="30dp" />
 

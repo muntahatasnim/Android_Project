@@ -27,7 +27,7 @@ public class SearchResultsActivity extends Activity {
     Medicine medicine;
     int price;
 
-    TextView medName, pharmName, quantity, phoneNo, Cost,cartMedName,cartQuantity,cartPrice;
+    TextView medName, pharmName, quantity, phoneNo, Cost, cartMedName, cartQuantity, cartPrice;
     int cnt = 0;
     TextView showCnt;
 
@@ -42,10 +42,10 @@ public class SearchResultsActivity extends Activity {
         pharmName = findViewById(R.id.pharmacyNameValue);
         quantity = findViewById(R.id.quantityValue);
         Cost = findViewById(R.id.priceValue);
-        final Button checkoutButton=findViewById(R.id.checkout);
-        cartMedName=findViewById(R.id.CartBrandNameValue);
-        cartQuantity=findViewById(R.id.cart_quantity);
-        cartPrice=findViewById(R.id.cart_price);
+        final Button checkoutButton = findViewById(R.id.checkout);
+        cartMedName = findViewById(R.id.CartBrandNameValue);
+        cartQuantity = findViewById(R.id.cart_quantity);
+        cartPrice = findViewById(R.id.cart_price);
         String queryName = getIntent().getStringExtra("showKey");
         System.out.println(queryName);
         Query query = FirebaseDatabase.getInstance().getReference().child("Medicine").orderByChild("brandName").equalTo(queryName);
@@ -64,16 +64,18 @@ public class SearchResultsActivity extends Activity {
                     pharmName.setText(medicine.getAvailableIn());
                     quantity.setText(String.valueOf(String.valueOf(medicine.getStock())));
                     Cost.setText(String.valueOf(medicine.getPrice()));
-                    price=medicine.getPrice();
-                    Query queryPharma = FirebaseDatabase.getInstance().getReference().child("Pharmacy").orderByChild("User Name").equalTo(medicine.getAvailableIn());
+                    price = medicine.getPrice();
+                    Query queryPharma = FirebaseDatabase.getInstance().getReference().child("Pharmacy").orderByChild("Pharmacy Name").equalTo(medicine.getAvailableIn());
                     queryPharma.addListenerForSingleValueEvent(new ValueEventListener() {
 
 
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if (dataSnapshot.exists()) {
-                                Pharmacy pharmacy = dataSnapshot.getValue(Pharmacy.class);
-                                phoneNo.setText(String.valueOf(pharmacy.getPhoneNo()));
+                            for (DataSnapshot childSnapshot1: dataSnapshot.getChildren()) {
+                                {
+                                    Pharmacy pharmacy = childSnapshot1.getValue(Pharmacy.class);
+                                    phoneNo.setText(String.valueOf(pharmacy.getPhoneNo()));
+                                }
                             }
                         }
 
@@ -88,10 +90,7 @@ public class SearchResultsActivity extends Activity {
 
 
                 }
-
-
             }
-
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -99,7 +98,7 @@ public class SearchResultsActivity extends Activity {
             }
         });
         showCnt = findViewById(R.id.count);
-        final TextView mycart=findViewById(R.id.your_Cart);
+        final TextView mycart = findViewById(R.id.your_Cart);
         mycart.setVisibility(View.GONE);
         final Button cartButton = (Button) findViewById(R.id.cart);
         final Button plusButton = findViewById(R.id.plus);
@@ -144,11 +143,11 @@ public class SearchResultsActivity extends Activity {
         cartPrice.setVisibility(View.GONE);
         cartMedName.setVisibility(View.GONE);
         cartQuantity.setVisibility(View.GONE);
-        final TextView printProduct=findViewById(R.id.printBrandName);
+        final TextView printProduct = findViewById(R.id.printBrandName);
         printProduct.setVisibility(View.GONE);
-        final TextView printAmount=findViewById(R.id.printQuantity);
+        final TextView printAmount = findViewById(R.id.printQuantity);
         printAmount.setVisibility(View.GONE);
-        final TextView print_price=findViewById(R.id.printPrice);
+        final TextView print_price = findViewById(R.id.printPrice);
         print_price.setVisibility(View.GONE);
         checkoutButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -169,7 +168,6 @@ public class SearchResultsActivity extends Activity {
 
 
     }
-
 
 
 }

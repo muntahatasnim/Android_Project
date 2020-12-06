@@ -4,12 +4,12 @@ public class Pharmacy {
     String pId;
     String userName;
     String Address;
-    String phoneNo;
+    int phoneNo;
 
     public Pharmacy() {
     }
 
-    public Pharmacy(String pId, String userName, String address, String phoneNo) {
+    public Pharmacy(String pId, String userName, String address, int phoneNo) {
         this.pId = pId;
         this.userName = userName;
         Address = address;
@@ -28,7 +28,7 @@ public class Pharmacy {
         return Address;
     }
 
-    public String getPhoneNo() {
+    public int getPhoneNo() {
         return phoneNo;
     }
 }
